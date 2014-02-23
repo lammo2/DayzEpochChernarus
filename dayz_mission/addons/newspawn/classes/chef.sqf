@@ -35,8 +35,6 @@ player addMagazine 'FoodSteakCooked';
 player addMagazine 'FoodSteakCooked';
 player addMagazine 'ItemWaterbottle';
 player selectWeapon "M9SD";
-reload player;
-sleep 5;
 titleText ["Class selected!", "PLAIN DOWN", 3];
 titleFadeOut 1;
 [] call respawn_handler;

@@ -35,8 +35,6 @@ player addWeapon 'ItemCrowbar';
 player addWeapon 'ItemKnife';
 player addWeapon 'ItemToolbox';
 player selectWeapon "MakarovSD";
-reload player;
-sleep 5;
 titleText ["Class selected!", "PLAIN DOWN", 3];
 titleFadeOut 1;
 [] call respawn_handler;

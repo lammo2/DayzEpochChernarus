@@ -35,8 +35,6 @@ player addWeapon   'ItemMachete';
 player addMagazine 'ItemBandage';
 player addMagazine 'ItemPainkiller';
 player selectWeapon "glock17_EP1";
-reload player;
-sleep 5;
 titleText ["Class selected!", "PLAIN DOWN", 3];
 titleFadeOut 1;
 [] call respawn_handler;

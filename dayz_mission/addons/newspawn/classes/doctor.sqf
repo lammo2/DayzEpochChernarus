@@ -35,8 +35,6 @@ player addMagazine 'ItemBandage';
 player addMagazine 'ItemBloodbag';
 player addMagazine 'ItemMorphine';
 player selectWeapon "M9";
-reload player;
-sleep 5;
 titleText ["Class selected!", "PLAIN DOWN", 3];
 titleFadeOut 1;
 [] call respawn_handler;

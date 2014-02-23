@@ -35,8 +35,6 @@ player addWeapon 'ItemHatchet_DZE';
 player addWeapon 'ItemMatchbox_DZE';
 player addWeapon 'ItemKnife';
 player selectWeapon "revolver_EP1";
-reload player;
-sleep 5;
 titleText ["Class selected!", "PLAIN DOWN", 3];
 titleFadeOut 1;
 [] call respawn_handler;

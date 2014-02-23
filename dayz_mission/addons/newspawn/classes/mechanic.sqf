@@ -35,8 +35,6 @@ player addMagazine 'ItemJerryCan';
 player addMagazine 'PartWheel';
 player addWeapon   'ItemToolbox';
 player selectWeapon "Makarov";
-reload player;
-sleep 5;
 titleText ["Class selected!", "PLAIN DOWN", 3];
 titleFadeOut 1;
 [] call respawn_handler;
