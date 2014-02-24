@@ -4,7 +4,7 @@
 	It handles the humanity allocation and body cleanup.
 */
 
-private ["_unit","_player","_humanity","_banditkills","_startTime"];
+private ["_unit","_player","_humanity","_banditkills"];
 _unit = _this select 0;
 _player = _this select 1;
 
@@ -13,7 +13,7 @@ _player = _this select 1;
 if (isPlayer _player) then {
 	private ["_banditkills","_humanity"];
 	
-	//diag_log format ["[DZMS]: Debug: Unit killed by %1 at %2", _player, mapGridPosition _unit];
+	//diag_log text format ["[DZMS]: Debug: Unit killed by %1 at %2", _player, mapGridPosition _unit];
 	
 	//Lets grab some info
 	_humanity = _player getVariable ["humanity",0];
@@ -39,7 +39,7 @@ if (isPlayer _player) then {
 	
 } else {
 
-	//diag_log format ["[DZMS]: Debug: Unit killed by %1 at %2", _player, mapGridPosition _unit];
+	//diag_log text format ["[DZMS]: Debug: Unit killed by %1 at %2", _player, mapGridPosition _unit];
 
 	if (DZMSRunGear) then {
 		//Since a player ran them over, or they died from unknown causes
@@ -54,7 +54,7 @@ if (isPlayer _player) then {
 };
 
 if (DZMSCleanDeath) then {
-	deleteVehicle _unit;
+	_unit call DZMSPurgeObject;
 	if (DZMSCleanDeath) exitWith {};
 };
 
@@ -68,6 +68,5 @@ if (DZMSUseRPG AND ("RPG7V" in (weapons _unit))) then {
 };
 
 //Dead body timer and cleanup
-_startTime = diag_tickTime;
-waitUntil {sleep 10; (diag_tickTime - _startTime) > DZMSBodyTime;};
-deleteVehicle _unit;
+[DZMSBodyTime,10] call DZMSSleep;
+_unit call DZMSPurgeObject;
