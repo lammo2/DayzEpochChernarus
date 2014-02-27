@@ -6,7 +6,7 @@
 DZ_GAMEMODE = 0;
 
 /* addons from these folders will be loaded */
-DZ_MISSION_ADDONS = ["bloodbag","buildings","buildplus","craftvehicles","keyhandler","newspawn","refuel","deadzones","safezones","suicide","takeclothes","zombietruck"];
+DZ_MISSION_ADDONS = ["functions","bloodbag","buildings","buildplus","craftvehicles","keyhandler","newspawn","refuel","deadzones","safezones","suicide","takeclothes","zombietruck"];
 
 DZ_LOAD_SARGE_AI = false;
 
@@ -334,7 +334,6 @@ if (DZ_GAMEMODE == -1) then {DZ_GAMEMODE = floor(random 3);};
 switch (DZ_GAMEMODE) do {
     case 1: {
         DZ_MISSION_ADDONS = DZ_MISSION_ADDONS - ["craftvehicles","deadzones"];
-        DZ_LOAD_SARGE_AI = true;
         DZE_BuildOnRoads = true;
         dayz_fullMoonNights = false;
         DZ_NEWSPAWN_PICK_CLASS = false;
@@ -346,7 +345,6 @@ switch (DZ_GAMEMODE) do {
         DefaultBackpack = "CZ_VestPouch_EP1";
     };
     case 2: {
-        DZ_LOAD_SARGE_AI = true;
         DynamicVehicleDamageHigh = 0;
         dayz_maxLocalZombies = 50;
         MaxVehicleLimit = 1000;

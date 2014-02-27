@@ -947,6 +947,6 @@ server_setLocalObjVars = {
     call compile preprocessFileLineNumbers format["\z\addons\dayz_server\addons\%1\init.sqf",_x];
     diag_log text format["Loaded Addon: %1",_x];
 } forEach DZ_SERVER_ADDONS;
-call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
-[] ExecVM "\z\addons\dayz_server\DZMS\DZMSInit.sqf";
+//call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
+//[] ExecVM "\z\addons\dayz_server\DZMS\DZMSInit.sqf";
 //########## END INSERTED CODE: LOAD ALL ADDONS
